@@ -14,3 +14,43 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+  $(document).ready(clickThrough);
+
+  $(".reset").click(function() {
+    document.location.reload(true);
+  });
+
+  $(".question").hide();
+  $(".question").first().show();
+
+  $(".response").hide();
+
+  function clickThrough() {
+    $(".yes-no").each(function() {
+      $(this).click(function() {
+        $(".question").hide();
+        if ($(this).attr("id") == "yes-1") {
+          $("#1").show();
+        } else if ($(this).attr("id") == "no-1") {
+          $("#q2").show();
+        } else if ($(this).attr("id") == "yes-2") {
+          $("#2").show();
+        } else if ($(this).attr("id") == "no-2") {
+          $("#q3").show();
+        } else if ($(this).attr("id") == "yes-3") {
+          $("#q4").show();
+        } else if ($(this).attr("id") == "no-3") {
+          $("#3").show();
+        } else if ($(this).attr("id") == "yes-4") {
+          $("#4").show();
+        } else if ($(this).attr("id") == "no-4") {
+          $("#ask-again").show();
+        }
+      });
+    });
+  }
+
+});
