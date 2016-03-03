@@ -19,14 +19,15 @@ $(document).ready(function() {
 
   $(document).ready(clickThrough);
 
-  $(".reset").click(function() {
-    document.location.reload(true);
-  });
-
   $(".question").hide();
   $(".question").first().show();
-
   $(".response").hide();
+
+  $(".reset").click(function() {
+    $(".question").hide();
+    $(".question").first().show();
+    $(".response").hide();
+  });
 
   function clickThrough() {
     $(".yes-no").each(function() {
